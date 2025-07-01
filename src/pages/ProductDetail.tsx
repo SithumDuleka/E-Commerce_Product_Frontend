@@ -2,16 +2,22 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
 interface Variant {
-  name: string;
-  image: string;
-  price: number;
+  id: number;
+  color?: string;
+  size?: string;
+  price?: number;
+  image?: string;
 }
 
 interface Product {
   id: number;
   name: string;
-  description: string;
+  description?: string | null;
+  base_price: number;
+  thumbnail?: string | null;
+  label?: string | null;
   variant: Variant[];
 }
 
@@ -55,7 +61,7 @@ const ProductDetail = () => {
       <div className="mb-6">
         <img
           src={variant.image}
-          alt={variant.name}
+          alt={variant.size}
           className="w-full h-72 object-cover rounded-xl shadow-md"
         />
       </div>
@@ -71,15 +77,15 @@ const ProductDetail = () => {
       <div className="flex flex-wrap gap-2 mb-8">
         {product.variant.map((v) => (
           <button
-            key={v.name}
+            key={v.size}
             onClick={() => setVariant(v)}
             className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
-              variant.name === v.name
+              variant.size === v.size
                 ? "bg-blue-500 text-white shadow-lg transform scale-105"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md"
             }`}
           >
-            {v.name}
+            {v.size}
           </button>
         ))}
       </div>
