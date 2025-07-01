@@ -1,7 +1,8 @@
 // src/hooks/useProduct.ts
 import { useEffect, useState } from "react";
 import { getProductByID } from "../api/productService";
-import type { Product } from "../products";
+import type { Product } from "../types/Product";
+
 
 export const useProduct = (id: string) => {
   const [product, setProduct] = useState<Product| null>(null);
