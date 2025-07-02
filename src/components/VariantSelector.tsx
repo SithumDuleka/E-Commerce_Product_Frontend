@@ -64,6 +64,7 @@ const VariantSelector =({product,variant,setVariant}:Props)=>{
                     }`}
                   >
                     {v.size || v.color || "Variant"}
+                    
                   </button>
                 ))}
               </div>
