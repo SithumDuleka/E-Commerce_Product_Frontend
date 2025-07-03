@@ -27,7 +27,7 @@ export const useProductForm = (
     ],
   });
 
-  // Handle text input fields (base info)
+  
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -38,7 +38,7 @@ export const useProductForm = (
     }));
   };
 
-  // Handle file input for thumbnail
+  
   const handleThumbnailChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files?.[0]) {
       setProduct((prev) => ({
@@ -48,7 +48,7 @@ export const useProductForm = (
     }
   };
 
-  // Handle variant field changes
+  
   const handleVariantChange = (
     index: number,
     field: keyof Variant,
@@ -63,7 +63,6 @@ export const useProductForm = (
     }));
   };
 
-  // ➕ Add new variant block
   const addVariant = () => {
     setProduct((prev) => ({
       ...prev,
@@ -74,7 +73,7 @@ export const useProductForm = (
     }));
   };
 
-  // ❌ Remove a specific variant by index
+
   const removeVariant = (index: number) => {
     setProduct((prev) => ({
       ...prev,
@@ -82,7 +81,7 @@ export const useProductForm = (
     }));
   };
 
-  // 🧾 Submit form
+  
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -124,10 +123,10 @@ export const useProductForm = (
       });
 
       const result = await res.json();
-      console.log("✅ Product created/updated:", result);
+      console.log("Product created/updated:", result);
       updateUI();
     } catch (err) {
-      console.error("❌ Error:", err);
+      console.error(" Error:", err);
     }
   };
 

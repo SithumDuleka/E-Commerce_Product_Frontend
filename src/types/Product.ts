@@ -1,4 +1,3 @@
-// src/types/Product.ts
 export interface Variant {
   id: number;
   color?: string;

@@ -30,16 +30,12 @@ const AddProductForm = ({
 }: Props) => {
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
-      {/* Backdrop with blur effect */}
       <div 
         className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
         onClick={onClose}
       />
-      
-      {/* Modal container */}
       <div className="flex min-h-full items-center justify-center p-4">
         <div className="relative w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all duration-300 scale-100">
-          {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-6">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold text-white">Add New Product</h2>
@@ -55,12 +51,10 @@ const AddProductForm = ({
             </div>
           </div>
 
-          {/* Form */}
           <form onSubmit={(e) => {
             handleSubmit(e);
             onClose();
           }} className="p-8 space-y-6 max-h-[70vh] overflow-y-auto">
-            {/* Basic Info Section */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-900 border-b border-gray-200 pb-2">
                 Basic Information
@@ -138,7 +132,6 @@ const AddProductForm = ({
               </div>
             </div>
 
-            {/* Variants Section */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-gray-900 border-b border-gray-200 pb-2">
@@ -232,7 +225,6 @@ const AddProductForm = ({
               </div>
             </div>
 
-            {/* Submit Button */}
             <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200">
               <button
                 type="button"

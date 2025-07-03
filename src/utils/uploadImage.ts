@@ -1,4 +1,3 @@
-// utils/uploadImage.ts
 import { supabase } from "../api/supabaseClient";
 
 export const uploadImage = async (file: File, folder = 'product-images'): Promise<string | null> => {
