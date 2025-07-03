@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent } from "react";
+import { useState } from "react";
 import { useProducts } from "../hooks/useProducts";
 import ProductCard from "../components/ProductCard";
 import Test1 from "../components/addProductSample";
