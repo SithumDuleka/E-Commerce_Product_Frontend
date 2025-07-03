@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useProductForm } from "../hooks/useProductForm"; // make sure this path is correct
 import AddProductForm from "./AddProductForm";
 

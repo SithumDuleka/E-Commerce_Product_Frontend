@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useProduct } from "../hooks/useProduct";
 import VariantSelector from "../components/VariantSelector";
 
@@ -13,15 +12,7 @@ interface Variant {
   image?: string;
 }
 
-interface Product {
-  id: number;
-  name: string;
-  description?: string | null;
-  base_price: number;
-  thumbnail?: string | null;
-  label?: string | null;
-  variant: Variant[];
-}
+
 
 const ProductDetail = () => {
   const { id } =useParams<{id:string}>();

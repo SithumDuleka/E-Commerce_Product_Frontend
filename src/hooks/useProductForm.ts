@@ -2,6 +2,8 @@ import { useState, type ChangeEvent, type FormEvent } from "react";
 import type { Product, Variant } from "../types/ProductForm";
 import { uploadImage } from "../utils/uploadImage";
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export const useProductForm = (
   updateUI: () => void,
   isUpdate = false,
@@ -111,8 +113,8 @@ export const useProductForm = (
     };
 
     const url = isUpdate
-      ? `http://localhost:4000/api/products/${productId}`
-      : "http://localhost:4000/api/products/create";
+      ? `${BASE_URL}/products/${productId}`
+      : `${BASE_URL}/products/create`;
 
     try {
       const res = await fetch(url, {

@@ -1,58 +1,24 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
 import { useProducts } from "../hooks/useProducts";
-
 import ProductCard from "../components/ProductCard";
-import ProductForm from "../components/addProduct";
 import Test1 from "../components/addProductSample";
 
-
-// interface Variant {
-//   name: string;
-//   image: string;
-//   price: number;
-// }
-
-// interface Product {
-//   id: number;
-//   name: string;
-//   base_price: number;
-//   thumbnail: string;
-//   description:string;
-//   label?: string;
-//   variants: Variant[];
-// }
-
 const ProductList = () => {
-  const {products,loading,error,fetchProducts} = useProducts();
+  const { products, loading, error, fetchProducts } = useProducts();
   console.log(products);
-    if (loading) return <div>Loading products...</div>;
+  if (loading) return <div>Loading products...</div>;
   if (error) return <div>{error}</div>;
-  // const [products, setProducts] = useState<Product[]>([]);
-
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     try {
-  //       const response = await axios.get("http://localhost:4000/api/products");
-  //       console.log("Fetched data:", response.data); // 👈 log to inspect
-  //       setProducts(response.data.data);
-  //     } catch (error) {
-  //       console.error("Failed to fetch products:", error);
-  //     }
-  //   };
-
-  //   fetchProducts();
-  // },[]);
+ 
 
   return (
     <div className="container mx-auto px-4 py-16 min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-200">
       <h1 className="text-5xl font-extrabold text-gray-900 mb-14 text-center tracking-tight drop-shadow-lg">
-        <span className="bg-gradient-to-r from-black to-purple-600 bg-clip-text text-transparent">E Commerce Store</span>
+        <span className="bg-gradient-to-r from-black to-purple-600 bg-clip-text text-transparent">
+          E Commerce Store
+        </span>
       </h1>
       {/* <ProductForm updateUI={fetchProducts}></ProductForm> */}
       <Test1 updateUI={fetchProducts}></Test1>
-      
+
       {/* <div className="flex justify-center mb-10">
         <span className="inline-flex items-center gap-3 px-10 py-3 rounded-2xl border border-[#1A1A1A] bg-white/90 shadow-lg text-[#1A1A1A] text-base font-semibold tracking-tight hover:shadow-xl transition-all">
           <svg className="w-6 h-6 text-[#6C47FF]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
