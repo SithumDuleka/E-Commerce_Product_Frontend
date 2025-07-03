@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useProducts } from "../hooks/useProducts";
+
 import ProductCard from "../components/ProductCard";
+import ProductForm from "../components/addProduct";
+
 
 // interface Variant {
 //   name: string;
@@ -21,7 +24,7 @@ import ProductCard from "../components/ProductCard";
 // }
 
 const ProductList = () => {
-  const {products,loading,error} = useProducts();
+  const {products,loading,error,fetchProducts} = useProducts();
   console.log(products);
     if (loading) return <div>Loading products...</div>;
   if (error) return <div>{error}</div>;
@@ -46,6 +49,7 @@ const ProductList = () => {
       <h1 className="text-5xl font-extrabold text-gray-900 mb-14 text-center tracking-tight drop-shadow-lg">
         <span className="bg-gradient-to-r from-black to-purple-600 bg-clip-text text-transparent">E Commerce Store</span>
       </h1>
+      <ProductForm updateUI={fetchProducts}></ProductForm>
       
       {/* <div className="flex justify-center mb-10">
         <span className="inline-flex items-center gap-3 px-10 py-3 rounded-2xl border border-[#1A1A1A] bg-white/90 shadow-lg text-[#1A1A1A] text-base font-semibold tracking-tight hover:shadow-xl transition-all">

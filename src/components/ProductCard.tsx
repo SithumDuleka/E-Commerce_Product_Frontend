@@ -14,7 +14,8 @@ const ProductCard = ({ product }: Props) => {
       <div className="relative overflow-hidden h-60 flex items-center justify-center bg-gradient-to-t from-blue-100 to-white">
         <img
         //   src={`/assets/${product.thumbnail}`}
-        src={`https://cvgyyvcckyppgwhuviac.supabase.co/storage/v1/object/public/product-images/${product.thumbnail}`}
+        // src={`https://cvgyyvcckyppgwhuviac.supabase.co/storage/v1/object/public/product-images/${product.thumbnail}`}
+          src={`${product.thumbnail}`}
           alt={product.name}
           className="w-44 h-44 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-lg"
         />
