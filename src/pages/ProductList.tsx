@@ -13,9 +13,7 @@ const ProductList = () => {
   if (loading) return <PulseLoader />;
   if (error) return <div>{error}</div>;
 
-  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  };
+  
 
   const filteredProducts = products.filter((product: Product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
